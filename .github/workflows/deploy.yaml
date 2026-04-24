@@ -26,6 +26,8 @@ jobs:
       run: |
         mkdir -p $HOME/.kube
         echo "${{ secrets.KUBECONFIG }}" > $HOME/.kube/config
+    - name: Test cluster connection
+      run: kubectl get nodes
 
     - name: Deploy
       run: |
